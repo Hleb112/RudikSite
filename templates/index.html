@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фото со звуком</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+        }
+        img {
+            max-width: 90%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<img id="photo" src="/static/image.jpg" alt="Click me">
+
+<audio id="sound" src="/static/sound.mp3"></audio>
+
+<script>
+    const img = document.getElementById("photo");
+    const sound = document.getElementById("sound");
+
+    img.addEventListener("click", () => {
+        sound.currentTime = 0;
+        sound.play();
+    });
+</script>
+
+</body>
+</html>
